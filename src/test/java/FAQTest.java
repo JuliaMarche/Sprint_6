@@ -1,34 +1,8 @@
-import org.example.pageObject.MainPage;
-import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class FAQTest {
-
-    private WebDriver driver;
-    private MainPage mainPage;
-
-    @BeforeEach
-    public void setUp() {
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--no-sandbox", "--disable-dev-shm-usage");
-        driver = new ChromeDriver(options);
-        //driver = new FirefoxDriver();
-        mainPage = new MainPage(driver);
-        mainPage.openPage();
-        mainPage.coockieButtonClick();
-    }
-
-    @AfterEach
-    public void tearDown() {
-            driver.quit();
-    }
-
+public class FAQTest extends BaseTest {
     @ParameterizedTest
     @CsvSource(delimiter = '|', value = {
             "0|Сутки — 400 рублей. Оплата курьеру — наличными или картой.",

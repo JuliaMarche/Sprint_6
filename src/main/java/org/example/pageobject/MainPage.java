@@ -1,4 +1,4 @@
-package org.example.pageObject;
+package org.example.pageobject;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -31,7 +31,7 @@ public class MainPage {
         driver.get(BASE_URL);
     }
 
-    public void coockieButtonClick(){
+    public void cookieButtonClick(){
         driver.findElement(acceptCookieButton).click();
     }
 
